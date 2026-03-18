@@ -1,36 +1,109 @@
 /* =========================
+   VARIABLES
+   ========================= */
+
+:root {
+  /* Colors */
+  --primary-color: #e63946;
+  --secondary-color: #5b21b6;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #b3adff;
+  --text-muted: #555;
+  --white: #ffffff;
+
+  /* Effects */
+  --shadow-color: #15151517;
+}
+
+/* =========================
    GLOBAL SETTINGS
    ========================= */
+
+/* Use rem for spacing, px for fixed dimensions */
 
 * {
   box-sizing: border-box;
 }
 
-.mainHeader {
-  color: blueviolet;
-  text-align: center;
-  font-family: system-ui;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-.subHeader {
-  text-align: center;
-  font-family: system-ui;
-  font-size: 0.7rem;
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+
+  background-color: var(--secondary-color);
 }
 
-.mainParagraph {
+/* =========================
+   HEADER
+   ========================= */
+
+.logo-header {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.main-header {
+  margin-bottom: 0.5rem;
+
+  text-align: center;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.sub-header {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.main-paragraph {
+  max-width: 600px;
+  margin: 0 auto;
+
   text-align: left;
+  line-height: 1.7;
 }
+
+.content-card {
+  padding: 2rem 2rem 80px;
+
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.section-bg {
+  padding: 1rem;
+
+  background-color: var(--primary-bg-color);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   height: 60px;
+  margin-top: auto;
+
   background-color: #333;
-  color: white;
-  text-align: center;
-  line-height: 60px;
-  /* centers text vertically */
+  color: var(--white);
 }
