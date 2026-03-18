@@ -15,7 +15,7 @@
     <title>William Hoffman</title>
 </head>
 
-<body>
+<body class = "section-bg">
     <!-- =========================
        HEADER / NAVIGATION
        ========================= -->
@@ -31,7 +31,7 @@
             <div class="row mt-4">
                 <h1 class="logo-header mb-1">William Hoffman</h1>
 
-                <p class="sub-header mb-1">
+                <p class="main-header mb-1">
                     Junior at Indiana University Bloomington Luddy School of Informatics, Computing and Engineering
                 </p>
 
@@ -50,7 +50,7 @@
                     <img src="./Images/placeholder.png" class="img-fluid rounded" alt="Portrait of William Hoffman">
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <p class="main-paragraph">
                         I am a junior at Indiana University studying computer science with a focus on computing
                         fundamentals.
@@ -73,7 +73,7 @@
     <!-- =========================
        FOOTER
        ========================= -->
-    <footer id="footer-bar" class="bg-body-tertiary py-6 d-flex align-items-center justify-content-center"></footer>
+    <footer id="footer-bar" class="bg-body-tertiary d-flex align-items-center justify-content-center"></footer>
 
     <!-- =========================
        JS
@@ -87,8 +87,8 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            loadComponent("navigation-bar", "components/navigation-bar.html");
-            loadComponent("footer-bar", "components/footer-bar.html");
+            loadComponent("navigation-bar", "/Components/navigation-bar.html");
+            loadComponent("footer-bar", "/Components/footer-bar.html");
         });
     </script>
 </body>
