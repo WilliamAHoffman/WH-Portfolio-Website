@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,8 @@
     <title>William Hoffman</title>
 </head>
 
-<body class = "section-bg">
+<body class="section-bg">
+
     <!-- =========================
        HEADER / NAVIGATION
        ========================= -->
@@ -24,61 +24,63 @@
     <!-- =========================
        MAIN CONTENT
        ========================= -->
-    <main>
-        <div class="container content-card text-center mt-5">
+    <main class="py-5">
+        <div class="container">
+            <div class="content-card">
 
-            <!-- Intro Section -->
-            <div class="row mt-4">
-                <h1 class="logo-header mb-1">William Hoffman</h1>
-
-                <p class="main-header mb-1">
-                    Junior at Indiana University Bloomington Luddy School of Informatics, Computing and Engineering
-                </p>
-
-                <p class="sub-header mb-1">
-                    Bachelor of Science in Computer Science with Foundations Specialization
-                </p>
-
-                <p class="sub-header mb-1">
-                    Minors: Game Design and Math
-                </p>
-            </div>
-
-            <!-- Profile Section -->
-            <div class="row mt-4 align-items-center">
-                <div class="col-md-4">
-                    <img src="./Images/placeholder.png" class="img-fluid rounded" alt="Portrait of William Hoffman">
+                <!-- Intro Section -->
+                <div class="row justify-content-center mb-2">
+                    <div class="col-12 text-center">
+                        <h1 class="logo-header mb-2">William Hoffman</h1>
+                        <p class="main-header mb-1">
+                            Junior at Indiana University Bloomington Luddy School of Informatics, Computing and Engineering
+                        </p>
+                        <p class="sub-header mb-1">
+                            Bachelor of Science in Computer Science with Foundations Specialization
+                        </p>
+                        <p class="sub-header">
+                            Minors: Game Design and Math
+                        </p>
+                    </div>
                 </div>
 
-                <div class="col-md-6 text-center">
-                    <p class="main-paragraph">
-                        I am a junior at Indiana University studying computer science with a focus on computing
-                        fundamentals.
-                        Last year, I taught elementary school students STEM concepts through Teach IT, where I developed
-                        engaging and accessible learning experiences.
-                        I am passionate about making technology more approachable and inclusive.
-                        Currently, I work on designing and maintaining accessible websites for the Bloomington Community
-                        Orchard,
-                        with a focus on improving usability and meeting accessibility standards.
-                        I have also served as an undergraduate teaching assistant for two semesters, supporting students
-                        in an
-                        introductory computer science course.
-                    </p>
-                </div>
-            </div>
+                <hr class="my-4">
 
+                <!-- Profile Section -->
+                <div class="row mt-3 align-items-center justify-content-center g-4">
+                    <div class="col-md-3 text-center">
+                        <img src="./Images/placeholder.png"
+                             class="profile-img"
+                             alt="Portrait of William Hoffman">
+                    </div>
+
+                    <div class="col-md-7">
+                        <p class="main-paragraph">
+                            I am a junior at Indiana University studying computer science with a focus on computing
+                            fundamentals.
+                            Last year, I taught elementary school students STEM concepts through Teach IT, where I developed
+                            engaging and accessible learning experiences.
+                            I am passionate about making technology more approachable and inclusive.
+                            Currently, I work on designing and maintaining accessible websites for the Bloomington Community
+                            Orchard, with a focus on improving usability and meeting accessibility standards.
+                            I have also served as an undergraduate teaching assistant for two semesters, supporting students
+                            in an introductory computer science course.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 
     <!-- =========================
        FOOTER
        ========================= -->
-    <footer id="footer-bar" class="bg-body-tertiary mt-5 d-flex align-items-center justify-content-center"></footer>
+    <footer id="footer-bar"></footer>
 
     <!-- =========================
        JS
        ========================= -->
-
     <script>
         async function loadComponent(id, file) {
             const res = await fetch(file);

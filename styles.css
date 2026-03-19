@@ -5,9 +5,7 @@
 :root {
   /* Colors */
   --primary-color: #7c3aed;
-  /* refined purple */
   --secondary-color: #1e1b4b;
-  /* deep indigo */
   --primary-bg-color: #ffffff;
   --secondary-bg-color: #f5f3ff;
   --text-muted: #6b7280;
@@ -26,8 +24,6 @@
    GLOBAL SETTINGS
    ========================= */
 
-/* Use rem for spacing, px for fixed dimensions */
-
 * {
   box-sizing: border-box;
 }
@@ -41,19 +37,17 @@ body {
 
 main {
   flex: 1;
-  align-items: center;
 }
 
 body {
   display: flex;
   flex-direction: column;
-
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
 
 /* =========================
-   HEADER
+   HEADER / NAV
    ========================= */
 
 .logo {
@@ -79,38 +73,36 @@ body {
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-sit-color);
+  margin-bottom: 0.5rem;
 }
 
 .sub-header {
   font-size: 0.9rem;
   text-align: center;
   color: var(--text-muted);
+  margin-bottom: 0.25rem;
 }
 
 .sit-logo-header {
   font-weight: 700;
   font-size: 3rem;
   color: var(--secondary-sit-color);
+  margin-bottom: 0.25rem;
 }
 
 /* =========================
-   CONTENT
+   NAV LAYOUT
    ========================= */
 
-.main-paragraph {
-  max-width: 600px;
-  margin: 0 auto;
-
-  text-align: left;
-  line-height: 1.7;
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.content-card {
-  padding: 2rem 2rem 80px;
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 10px 25px var(--shadow-color);
-}
+/* =========================
+   BACKGROUND
+   ========================= */
 
 .section-bg {
   background-color: var(--secondary-color);
@@ -120,15 +112,151 @@ body {
   background-color: var(--primary-sit-color);
 }
 
+/* =========================
+   CONTENT CARD
+   ========================= */
+
+.content-card {
+  padding: 2.5rem 2.5rem 3rem;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* =========================
+   MAIN PARAGRAPH
+   ========================= */
+
+.main-paragraph {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.75;
+  color: #374151;
+}
+
+/* =========================
+   PROFILE SECTION (index)
+   ========================= */
+
+.profile-img {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--secondary-bg-color);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  display: block;
+  margin: 0 auto;
+}
+
+/* =========================
+   SECTION CARDS (carousel)
+   ========================= */
+
 .section-card {
-  border-top: 4px solid var(--primary-sit-color);
-  transition: all 0.2s ease;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-top: 4px solid var(--secondary-sit-color);
+  height: 100%;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .section-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
   background-color: var(--sit-highlight-color);
+}
+
+.section-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--secondary-sit-color);
+}
+
+.section-card p,
+.section-card ul {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #374151;
+  margin-bottom: 0;
+}
+
+/* Fix misuse of <ul> as paragraph container */
+.section-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* =========================
+   CAROUSEL
+   ========================= */
+
+.carousel-item {
+  min-height: 560px;
+  padding-bottom: 3.5rem; /* room for indicators */
+}
+
+.project-slide {
+  width: 100%;
+  padding: 1rem 0.5rem 0;
+}
+
+/* Arrow position — vertically centred on the card grid */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: 3rem;
+}
+
+.carousel-control-prev {
+  left: -1rem;
+}
+
+.carousel-control-next {
+  right: -1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  padding: 0.6rem;
+  width: 2rem;
+  height: 2rem;
+  background-size: 60%;
+}
+
+/* Indicators */
+.carousel-indicators {
+  bottom: 0.5rem;
+}
+
+.carousel-indicators button {
+  background-color: rgba(0,0,0,0.7);
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators button.active {
+  background-color: var(--secondary-sit-color);
+}
+
+/* Prevent clipping of arrows */
+.carousel {
+  overflow: visible;
+}
+
+/* Inner carousel card */
+#projectCarousel.content-card {
+  padding: 2rem 3rem 3rem;
 }
 
 /* =========================
@@ -138,18 +266,30 @@ body {
 footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0 1.5rem;
 
   width: 100%;
-  height: 60px;
+  min-height: 65px;
   margin-top: auto;
 
-  background-color: #333;
+  background-color: #1a1a2e;
   color: var(--white);
+  border-top: 3px solid var(--primary-color);
+}
+
+footer .navbar-brand {
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+footer .navbar-brand:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* =========================
-   BOOT OVERRIDE
+   BOOTSTRAP OVERRIDES
    ========================= */
 
 .btn-primary {
@@ -157,64 +297,48 @@ footer {
   border-color: var(--primary-color);
 }
 
-/* Carousel sizing */
-.carousel-item {
-  min-height: 550px;
+.btn-primary:hover {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
 }
 
-/* Slide wrapper */
-.project-slide {
-  width: 100%;
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
-/* Section cards */
-.section-card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border-top: 4px solid #7f1d1d;
-  height: 100%;
-}
+/* =========================
+   RESPONSIVE TWEAKS
+   ========================= */
 
-/* Typography */
-.section-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
+@media (max-width: 768px) {
+  .logo-header {
+    font-size: 2.2rem;
+  }
 
-.section-card p,
-.section-card ul {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+  .sit-logo-header {
+    font-size: 2.2rem;
+  }
 
-/* Carousel arrows */
-.carousel-control-prev,
-.carousel-control-next {
-  top: 1rem;
-  bottom: auto;
-  transform: none;
-}
+  .carousel-control-prev {
+    left: 0;
+  }
 
-.carousel-control-prev {
-  left: 1rem;
-}
+  .carousel-control-next {
+    right: 0;
+  }
 
-.carousel-control-next {
-  right: 1rem;
-}
+  #projectCarousel.content-card {
+    padding: 1.25rem 1.25rem 2.5rem;
+  }
 
-/* Arrow styling */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1);
-  background-color: rgba(0,0,0,0.7);
-  border-radius: 50%;
-  padding: 0.75rem;
-}
+  .content-card {
+    padding: 1.5rem 1.25rem 2rem;
+  }
 
-/* Spacing */
-.carousel {
-  overflow: visible;
+  .profile-img {
+    max-width: 180px;
+    margin-bottom: 1.5rem;
+  }
 }
