@@ -36,7 +36,8 @@
 
                 <div class="row mt-3 align-items-center justify-content-center g-4">
                     <div class="col-md-3 text-center">
-                        <img id="profile-img" src="#"
+                        <!-- Relative path works fine from the repo root -->
+                        <img src="Images/portrait.png"
                              class="profile-img"
                              alt="Portrait of William Hoffman">
                     </div>
@@ -62,6 +63,7 @@
     <footer id="footer-bar"></footer>
 
     <script>
+        // ── Only change this line if your repo name changes ──
         window.BASE_PATH = "/WH-Portfolio-Website";
 
         async function loadComponent(id, file) {
@@ -71,7 +73,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("profile-img").src = window.BASE_PATH + "/Images/portrait.png";
             loadComponent("navigation-bar", "/Components/navigation-bar.html");
             loadComponent("footer-bar",     "/Components/footer-bar.html");
         });
