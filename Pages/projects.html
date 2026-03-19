@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <title>Projects — William Hoffman</title>
+
+    <style>
+        .project-card {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.11);
+        }
+
+        .project-card-img {
+            width: 260px;
+            min-height: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .project-card-img-placeholder {
+            width: 260px;
+            min-height: 200px;
+            flex-shrink: 0;
+            background-color: var(--secondary-bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .project-card-body {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.6rem;
+            flex: 1;
+        }
+
+        .project-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+
+        .project-card-desc {
+            font-size: 0.97rem;
+            color: #374151;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .project-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .project-card-link:hover {
+            color: #6d28d9;
+            text-decoration: underline;
+        }
+
+        .project-card-link svg {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 640px) {
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-card-img,
+            .project-card-img-placeholder {
+                width: 100%;
+                min-height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body class="section-bg">
+
+    <header id="navigation-bar"></header>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="content-card">
+
+                <div class="text-center mb-4">
+                    <h1 class="logo-header mb-1">Projects</h1>
+                    <p class="sub-header">A selection of things I've built and worked on.</p>
+                </div>
+
+                <hr class="mb-4">
+                <div id="projects-container" class="d-flex flex-column gap-4"></div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-bar"></footer>
+
+    <script>
+        // ============================================================
+        //  EDIT YOUR PROJECTS HERE
+        // ============================================================
+        const projects = [
+            {
+                title: "Project One",
+                image: "/Images/placeholder.png",
+                description: "WIP",
+                link: "https://github.com/WilliamAHoffman"
+            }
+        ];
+        // ============================================================
+
+        function renderProjects() {
+            const container = document.getElementById("projects-container");
+
+            projects.forEach(p => {
+                const imgHtml = p.image
+                    ? `<img src="${p.image}" alt="${p.title}" class="project-card-img">`
+                    : `<div class="project-card-img-placeholder">No image</div>`;
+
+                const linkHtml = p.link
+                    ? `<a href="${p.link}" class="project-card-link" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            View Project
+                       </a>`
+                    : "";
+
+                container.innerHTML += `
+                    <div class="project-card">
+                        ${imgHtml}
+                        <div class="project-card-body">
+                            <h2 class="project-card-title">${p.title}</h2>
+                            <p class="project-card-desc">${p.description}</p>
+                            ${linkHtml}
+                        </div>
+                    </div>`;
+            });
+        }
+
+        async function loadComponent(id, file) {
+            const res = await fetch(file);
+            const text = await res.text();
+            document.getElementById(id).innerHTML = text;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadComponent("navigation-bar", "/Components/navigation-bar.html");
+            loadComponent("footer-bar", "/Components/footer-bar.html");
+            renderProjects();
+        });
+    </script>
+
+</body>
+</html>
