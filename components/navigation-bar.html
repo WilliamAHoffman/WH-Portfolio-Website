@@ -1,12 +1,44 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
   <div class="container">
-    <a class="navbar-brand logo" href="/index.html">WH</a>
-    <div class="navbar justify-content-end" id="navMenu">
+    <a class="navbar-brand logo" id="nav-brand" href="#">WH</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+      aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
       <div class="nav-buttons py-2 py-lg-0">
-        <a class="btn btn-primary me-2" href="/index.html">Home</a>
-        <a class="btn btn-outline-secondary me-2" href="/Pages/serve-it.html">Serve IT</a>
-        <a class="btn btn-outline-secondary me-2" href="/Pages/projects.html">Projects</a>
+        <a class="btn me-2" id="nav-home"     href="#" data-nav-match="index">Home</a>
+        <a class="btn me-2" id="nav-serveit"  href="#" data-nav-match="serve-it">Serve IT</a>
+        <a class="btn"      id="nav-projects" href="#" data-nav-match="projects">Projects</a>
       </div>
     </div>
   </div>
 </nav>
+
+<script>
+  (function () {
+    const base = window.BASE_PATH || "";
+
+    document.getElementById("nav-brand").href    = base + "/index.html";
+    document.getElementById("nav-home").href     = base + "/index.html";
+    document.getElementById("nav-serveit").href  = base + "/Pages/serve-it.html";
+    document.getElementById("nav-projects").href = base + "/Pages/projects.html";
+
+    const path = window.location.pathname.toLowerCase();
+
+    // Special case: root path "/" or "/index.html" should match Home
+    document.querySelectorAll("[data-nav-match]").forEach(btn => {
+      const keywords = btn.getAttribute("data-nav-match").split(",");
+      let isActive = keywords.some(k => path.includes(k.trim()));
+
+      // If we're at the root or index, highlight Home
+      if (btn.id === "nav-home" && (path === "/" || path.endsWith("/index.html") || path === base.toLowerCase() + "/")) {
+        isActive = true;
+      }
+
+      btn.classList.add(isActive ? "btn-primary" : "btn-outline-secondary");
+    });
+  })();
+</script>

@@ -1,11 +1,20 @@
 <div class="d-flex align-items-center gap-2">
   <a class="navbar-brand mb-0" href="https://www.linkedin.com/in/william-antonio-hoffman/" aria-label="LinkedIn">
-    <img src="/Images/linkedin.png" alt="LinkedIn" width="36" height="36">
+    <img id="footer-linkedin" src="#" alt="LinkedIn" width="36" height="36">
   </a>
   <a class="navbar-brand mb-0" href="https://github.com/WilliamAHoffman" aria-label="GitHub">
-    <img src="/Images/githublogo.png" alt="GitHub" width="36" height="36">
+    <img id="footer-github" src="#" alt="GitHub" width="36" height="36">
   </a>
   <a class="navbar-brand mb-0" href="https://lemonlimecrime.itch.io/" aria-label="ItchIO">
-    <img src="/Images/itchllogo.png" alt="ItchIO" width="36" height="36">
+    <img id="footer-itch" src="#" alt="ItchIO" width="36" height="36">
   </a>
 </div>
+
+<script>
+  (function () {
+    const base = window.BASE_PATH || "";
+    document.getElementById("footer-linkedin").src = base + "/Images/linkedin.png";
+    document.getElementById("footer-github").src   = base + "/Images/githublogo.png";
+    document.getElementById("footer-itch").src     = base + "/Images/itchllogo.png";
+  })();
+</script>
