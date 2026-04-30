@@ -4,12 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link id="main-css" rel="stylesheet" href="#">
-    <title>ServeIT — William Hoffman</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>ServeIT</title>
 
     <style>
+        /* ---- Accordion overrides ---- */
         .sit-accordion .accordion-item {
             border: none;
             border-radius: 12px !important;
@@ -17,6 +23,7 @@
             margin-bottom: 0.75rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
         }
+
         .sit-accordion .accordion-button {
             background-color: #fff;
             color: var(--secondary-sit-color);
@@ -28,6 +35,7 @@
             gap: 1rem;
             transition: background-color 0.2s ease;
         }
+
         .sit-accordion .accordion-button:not(.collapsed) {
             background-color: #fff5f5;
             color: var(--secondary-sit-color);
@@ -35,17 +43,21 @@
             border-bottom-left-radius: 0 !important;
             border-bottom-right-radius: 0 !important;
         }
+
         .sit-accordion .accordion-button::after {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23990000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
+
         .sit-accordion .accordion-button:focus {
             box-shadow: 0 0 0 3px rgba(153, 0, 0, 0.15);
         }
+
         .sit-accordion .accordion-body {
             background-color: #fffafa;
             padding: 1.5rem 1.4rem 1.75rem;
             border-left: 5px solid var(--secondary-sit-color);
         }
+
         .sit-accordion .accordion-header-logo {
             height: 36px;
             width: auto;
@@ -63,9 +75,10 @@
         <div class="container">
             <div class="content-card">
 
+                <!-- Hero -->
                 <div class="row justify-content-center mb-2">
                     <div class="col-12 text-center">
-                        <img id="sit-logo" src="#" class="img-fluid mb-3" alt="ServeIT logo" style="max-height: 120px;">
+                        <img src="Images/serveit.png" class="img-fluid mb-3" alt="ServeIT logo" style="max-height: 120px;">
                         <h2 class="sit-logo-header">ServeIT</h2>
                         <p class="sub-header mb-2">Community-focused technology initiative</p>
                         <p class="main-paragraph mx-auto">
@@ -77,6 +90,7 @@
 
                 <hr class="my-4">
 
+                <!-- Accordion -->
                 <div class="accordion sit-accordion" id="sitAccordion">
 
                     <!-- Project 1: TeachIT -->
@@ -85,7 +99,7 @@
                             <button class="accordion-button" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#collapse1"
                                 aria-expanded="true" aria-controls="collapse1">
-                                <img id="bgc-logo" src="#" class="accordion-header-logo" alt="Boys &amp; Girls Club logo">
+                                <img src="Images/bgclogo.png" class="accordion-header-logo" alt="Boys &amp; Girls Club logo">
                                 TeachIT Team
                             </button>
                         </h2>
@@ -134,7 +148,7 @@
                             <button class="accordion-button collapsed" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#collapse2"
                                 aria-expanded="false" aria-controls="collapse2">
-                                <img id="bco-logo" src="#" class="accordion-header-logo" alt="Bloomington Community Orchard logo">
+                                <img src="Images/BCO-horiz-logo-bold-no-underline.png" class="accordion-header-logo" alt="Bloomington Community Orchard logo">
                                 Web Accessible Team
                             </button>
                         </h2>
@@ -183,7 +197,7 @@
                             <button class="accordion-button collapsed" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#collapse3"
                                 aria-expanded="false" aria-controls="collapse3">
-                                <img id="phenology-logo" src="#" class="accordion-header-logo" alt="Indiana Phenology logo">
+                                <img src="Images/indianaphenologylogo.png" class="accordion-header-logo" alt="Indiana Phenology logo">
                                 Web Design Team
                             </button>
                         </h2>
@@ -194,31 +208,31 @@
                                     <div class="col-md-4">
                                         <div class="section-card">
                                             <h3>Client Mission</h3>
-                                            <p>"To strengthen science-based environmental stewardship by empowering Hoosiers of all ages to participate in citizen science phenology data collection."</p>
+                                            <p>"To increase science-based environmental stewardship by empowering Hoosiers of all ages to participate in citizen science phenology data collection."</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="section-card">
                                             <h3>Problem Statement</h3>
-                                            <p>The web team collaborates closely with clients to make updates that better support the goals of the site.</p>
+                                            <p>The web team works closely with our clients to make changes that can best suit the goals of the site.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="section-card">
                                             <h3>Team Mission</h3>
-                                            <p>I worked on the web team to support local phenology research by helping build, revise, and maintain the website.</p>
+                                            <p>I worked on the web team to provide support for local phenology research, we helped to build and edit the site.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="section-card">
                                             <h3>The Work</h3>
-                                            <p>As a team, we edited and improved our client's website. We prioritized making the site accessible and visible to search engines. This work included using Figma and Wix to manage website content and make coding edits. We followed the client's design patterns to create a consistent and cohesive experience for users.</p>
+                                            <p>We worked as a team to edit and improve our client's website. We made sure to priority making the site accessible and visible to search engines. This work included using Figma and Wix to manage websites and make coding edits. We followed the client's design patterns to create a consistent and coherent experience for users.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="section-card">
                                             <h3>Reflection</h3>
-                                            <p>We worked on the Indiana Phenology website and implemented new changes through Wix. I enjoyed meeting with our client and presenting our changes. Indiana Phenology let us have some creative freedom in the design which was very reward. I hope to work with website more in the future.</p>
+                                            <p>We worked as a team to edit and improve our client's website. We made sure to priority making the site accessible and visible to search engines. This work included using Figma and Wix to manage websites and make coding edits. We followed the client's design patterns to create a consistent and coherent experience for users.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -234,26 +248,19 @@
     <footer id="footer-bar"></footer>
 
     <script>
-
-        window.BASE_PATH = "/WH-Portfolio-Website";
-
         async function loadComponent(id, file) {
-            const res = await fetch(window.BASE_PATH + file);
+            const res = await fetch(file);
             const text = await res.text();
             document.getElementById(id).innerHTML = text;
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            const b = window.BASE_PATH;
-            document.getElementById("main-css").href      = b + "/styles.css";
-            document.getElementById("sit-logo").src       = b + "/Images/serveit.png";
-            document.getElementById("bgc-logo").src       = b + "/Images/bgclogo.png";
-            document.getElementById("bco-logo").src       = b + "/Images/BCO-horiz-logo-bold-no-underline.png";
-            document.getElementById("phenology-logo").src = b + "/Images/indianaphenologylogo.png";
-            loadComponent("navigation-bar", "/Components/navigation-bar.html");
-            loadComponent("footer-bar",     "/Components/footer-bar.html");
+            loadComponent("navigation-bar", "navigation-bar.html");
+            loadComponent("footer-bar", "footer-bar.html");
         });
     </script>
 </body>
+
+</html>
 
 </html>
